@@ -1,46 +1,65 @@
-/* Estilo básico para centrar contenido */
 body, html {
   height: 100%;
   margin: 0;
   background: linear-gradient(135deg, #f06, #a0f);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Contenedor con animación de gelatina */
-.gelatina {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
-  border-radius: 50%;
-  box-shadow: 0 0 30px rgba(255, 20, 147, 0.7);
-  animation: gelatinaAnim 3s infinite ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  font-size: 2rem;
-  user-select: none;
+  gap: 20px;
+  padding: 40px;
 }
 
-/* Animación clave para el efecto gelatina */
+/* Texto normal */
+p {
+  font-size: 1.2rem;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Texto que tendrá efecto gelatina solo al pasar el ratón */
+.gelatina {
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Efecto gelatina al hacer hover */
+.gelatina:hover {
+  animation: gelatinaAnim 1s ease-in-out infinite;
+  color: #ff69b4;
+  text-shadow:
+    0 0 8px #ff69b4,
+    0 0 15px #ff1493;
+}
+
 @keyframes gelatinaAnim {
   0%, 100% {
     transform: scale(1) skew(0deg, 0deg);
-    box-shadow: 0 0 30px rgba(255, 20, 147, 0.7);
+    text-shadow:
+      0 0 8px #ff69b4,
+      0 0 15px #ff1493;
   }
   25% {
     transform: scale(1.1, 0.9) skew(-5deg, 5deg);
-    box-shadow: 0 0 50px rgba(255, 105, 180, 0.9);
+    text-shadow:
+      0 0 12px #ff8fb3,
+      0 0 20px #ff3499;
   }
   50% {
     transform: scale(0.9, 1.1) skew(5deg, -5deg);
-    box-shadow: 0 0 40px rgba(255, 20, 147, 0.8);
+    text-shadow:
+      0 0 10px #ff69b4,
+      0 0 18px #ff1493;
   }
   75% {
     transform: scale(1.05, 0.95) skew(-3deg, 3deg);
-    box-shadow: 0 0 45px rgba(255, 105, 180, 0.85);
+    text-shadow:
+      0 0 11px #ff8fb3,
+      0 0 19px #ff3499;
   }
 }
