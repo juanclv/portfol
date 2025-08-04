@@ -24,11 +24,13 @@ p {
   font-size: 3rem;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s ease;
   display: inline-block;
+  /* No animación ni transform por defecto */
+  transform: none;
+  animation: none;
 }
 
-/* Efecto gelatina al hacer hover */
+/* Efecto gelatina solo al hacer hover */
 .gelatina:hover {
   animation: gelatinaAnim 1s ease-in-out infinite;
   color: #ff69b4;
@@ -37,6 +39,7 @@ p {
     0 0 15px #ff1493;
 }
 
+/* Animación de gelatina */
 @keyframes gelatinaAnim {
   0%, 100% {
     transform: scale(1) skew(0deg, 0deg);
