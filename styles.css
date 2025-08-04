@@ -1,0 +1,46 @@
+/* Estilo básico para centrar contenido */
+body, html {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #f06, #a0f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor con animación de gelatina */
+.gelatina {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 20, 147, 0.7);
+  animation: gelatinaAnim 3s infinite ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  user-select: none;
+}
+
+/* Animación clave para el efecto gelatina */
+@keyframes gelatinaAnim {
+  0%, 100% {
+    transform: scale(1) skew(0deg, 0deg);
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.7);
+  }
+  25% {
+    transform: scale(1.1, 0.9) skew(-5deg, 5deg);
+    box-shadow: 0 0 50px rgba(255, 105, 180, 0.9);
+  }
+  50% {
+    transform: scale(0.9, 1.1) skew(5deg, -5deg);
+    box-shadow: 0 0 40px rgba(255, 20, 147, 0.8);
+  }
+  75% {
+    transform: scale(1.05, 0.95) skew(-3deg, 3deg);
+    box-shadow: 0 0 45px rgba(255, 105, 180, 0.85);
+  }
+}
