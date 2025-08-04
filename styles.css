@@ -25,44 +25,39 @@ p {
   font-weight: bold;
   cursor: pointer;
   display: inline-block;
-  /* No animación ni transform por defecto */
-  transform: none;
-  animation: none;
-}
-
-/* Efecto gelatina solo al hacer hover */
-.gelatina:hover {
-  animation: gelatinaAnim 1s ease-in-out infinite;
-  color: #ff69b4;
+  transform-origin: center bottom; /* Origen para que la deformación se sienta más orgánica */
+  transition: color 0.3s ease;
+  color: white;
   text-shadow:
     0 0 8px #ff69b4,
     0 0 15px #ff1493;
 }
 
-/* Animación de gelatina */
-@keyframes gelatinaAnim {
+/* Efecto gelatina al hover con animación suave y orgánica */
+.gelatina:hover {
+  color: #ff69b4;
+  animation: gelatinaOrgánica 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  /* La animación es mucho más lenta y suave */
+}
+
+/* Animación más natural y orgánica */
+@keyframes gelatinaOrgánica {
   0%, 100% {
     transform: scale(1) skew(0deg, 0deg);
     text-shadow:
       0 0 8px #ff69b4,
       0 0 15px #ff1493;
   }
-  25% {
-    transform: scale(1.1, 0.9) skew(-5deg, 5deg);
-    text-shadow:
-      0 0 12px #ff8fb3,
-      0 0 20px #ff3499;
+  20% {
+    transform: scale(1.05, 0.95) skew(-2deg, 1.5deg);
   }
-  50% {
-    transform: scale(0.9, 1.1) skew(5deg, -5deg);
-    text-shadow:
-      0 0 10px #ff69b4,
-      0 0 18px #ff1493;
+  40% {
+    transform: scale(0.95, 1.05) skew(1.5deg, -2deg);
   }
-  75% {
-    transform: scale(1.05, 0.95) skew(-3deg, 3deg);
-    text-shadow:
-      0 0 11px #ff8fb3,
-      0 0 19px #ff3499;
+  60% {
+    transform: scale(1.03, 0.97) skew(-1deg, 1deg);
+  }
+  80% {
+    transform: scale(0.97, 1.03) skew(1deg, -1deg);
   }
 }
